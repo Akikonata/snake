@@ -9,11 +9,40 @@
 			margin: 0;
 			padding: 0;
 		}
+		body,html{
+			width: 100%;
+			height: 100%;
+		}
+		#snake-container{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background: black;
+		}
+		#snake-container>canvas{
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		#snake{
+			z-index: 3
+		}
+		#items{
+			z-index: 2
+		}
+		#map{
+			z-index: 1
+		}
 	</style>
 </head>
 <body>
-	<canvas id='stage'>
-		
-	</canvas>
+	<!--事件响应绑在container上-->
+	<div id='snake-container'>
+		<canvas id='snake'></canvas>
+		<canvas id='items'></canvas>
+		<canvas id='map'></canvas>
+	</div>
 </body>
+<script src="lib/hammer.min.js"></script>
+<script src="game.js"></script>
 </html>
